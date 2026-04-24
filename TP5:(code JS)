@@ -1,0 +1,64 @@
+//Exercice 1:
+let a=Number(prompt ("entrez a"));
+let b=Number(prompt("entrez b"));
+if(isNaN (a)||isNaN(b)){
+    console.log("les valeurs entées ne sont pas des nombers")}
+else{
+     let somme=a+b;
+     let difference=a-b;
+     let produit =a*b;
+     console.log("somme"+somme);
+     console.log("difference"+difference);
+     console .log("produit"+produit);
+     if(b!==0){
+        let division =a/b;
+        console.log("division"+ division);
+    }
+    else{
+        console.log ("le dénominateur est nule");
+    }
+
+}
+//Exercice 2:
+let nombresecret= Math.floor(Math.random()*10)+1;
+let tentatives =0;
+let x;
+do{
+    x=Number(prompt("Devinez un nombre entre 1 et 10"));
+    tentatives++;
+    if (x< nombresecret){
+        alert ("entrez une valeur plus grand");
+    }
+    else if (x>nombresecret){
+        alert  ("entrez une valeur plus petite ");
+    }
+}while (x!==nombresecret)
+    alert("Bravo, vous avez trouvé en "+tentatives+"tentatives");
+//Exercice 3:   
+function lancerQuiz() {
+    //.1 Préparer les questions
+    let questions = [
+        {question: "Quelle est la capitale de la France ?",
+         reponse: "Paris" },
+        {question: " Quelle est la capitale de l'Egypte? ",
+        reponse: "Caire"},
+        {question: "Quelle est la capitale de la Norvége  ?",
+        reponse: "Oslo"}];
+    let score = 0;
+
+    // 2. Interroger l'utilisateur
+    for (let i = 0; i < questions.length; i++) {
+        let userAnswer = prompt(questions[i].question);
+
+    // 3. Vérification des réponses
+        if (userAnswer.toLowerCase() === questions[i].reponse.toLowerCase()) {
+            alert(" Réponse juste ");
+            score++ ;
+        } else {
+            alert("Mauvaise réponse ");
+        }
+    }
+
+    // 4. Résultats de l'évaluation
+    alert("Vous avez répondu correctement à  " + score + " sur " + questions.length + " questions." );
+} 
